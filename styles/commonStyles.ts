@@ -1,14 +1,16 @@
+
 import { StyleSheet, ViewStyle, TextStyle } from 'react-native';
 
 export const colors = {
-  primary: '#162456',    // Material Blue
-  secondary: '#193cb8',  // Darker Blue
-  accent: '#64B5F6',     // Light Blue
-  background: '#101824',  // Keeping dark background
-  backgroundAlt: '#162133',  // Keeping dark background
-  text: '#e3e3e3',       // Keeping light text
-  grey: '#90CAF9',       // Light Blue Grey
-  card: '#193cb8',       // Keeping dark card background
+  primary: '#FFD700',      // Gold (bee theme)
+  secondary: '#FFA500',    // Orange (bee theme)
+  accent: '#FFFF00',       // Yellow (bee theme)
+  background: '#FFFEF7',   // Light cream background
+  backgroundAlt: '#FFF8DC', // Beige alternative background
+  text: '#000000',         // Black text for readability
+  grey: '#8B7355',         // Brown grey
+  card: '#FFFFFF',         // White card background
+  shadow: 'rgba(0, 0, 0, 0.1)',
 };
 
 export const buttonStyles = StyleSheet.create({
@@ -35,8 +37,6 @@ export const commonStyles = StyleSheet.create({
     backgroundColor: colors.background,
     width: '100%',
     height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
   content: {
     flex: 1,
@@ -44,17 +44,25 @@ export const commonStyles = StyleSheet.create({
     justifyContent: 'center',
     maxWidth: 800,
     width: '100%',
+    paddingHorizontal: 20,
   },
   title: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: '800',
+    textAlign: 'center',
+    color: colors.text,
+    marginBottom: 15
+  },
+  subtitle: {
+    fontSize: 20,
+    fontWeight: '600',
     textAlign: 'center',
     color: colors.text,
     marginBottom: 10
   },
   text: {
     fontSize: 16,
-    fontWeight: '500',
+    fontWeight: '400',
     color: colors.text,
     marginBottom: 8,
     lineHeight: 24,
@@ -71,19 +79,50 @@ export const commonStyles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   card: {
-    backgroundColor: colors.backgroundAlt,
+    backgroundColor: colors.card,
     borderColor: colors.grey,
     borderWidth: 1,
-    borderRadius: 10,
-    padding: 10,
+    borderRadius: 15,
+    padding: 15,
     marginVertical: 8,
     width: '100%',
-    boxShadow: '0px 2px 3px rgba(0, 0, 0, 0.1)',
-    elevation: 2,
+    boxShadow: `0px 4px 8px ${colors.shadow}`,
+    elevation: 4,
+  },
+  productCard: {
+    backgroundColor: colors.card,
+    borderRadius: 15,
+    padding: 15,
+    marginVertical: 10,
+    marginHorizontal: 10,
+    width: '45%',
+    boxShadow: `0px 4px 8px ${colors.shadow}`,
+    elevation: 4,
+    alignItems: 'center',
   },
   icon: {
     width: 60,
     height: 60,
-    tintColor: "white",
+    tintColor: colors.text,
+  },
+  bottomTab: {
+    flexDirection: 'row',
+    backgroundColor: colors.card,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderTopWidth: 1,
+    borderTopColor: colors.grey,
+    boxShadow: `0px -2px 8px ${colors.shadow}`,
+    elevation: 8,
+  },
+  tabButton: {
+    flex: 1,
+    alignItems: 'center',
+    paddingVertical: 8,
+  },
+  tabButtonActive: {
+    backgroundColor: colors.primary,
+    borderRadius: 20,
+    paddingHorizontal: 15,
   },
 });
